@@ -9,6 +9,7 @@ const profileSchema = mongoose.Schema({
   country: { type: String, uppercase: true },
   createdOn: { type: Date, default: Date.now },
   lastLogin: { type: Date, default: Date.now },
+  favorites: [{type: mongoose.Schema.Types.ObjectId, ref: 'favorite'}],
 });
 
 module.exports = mongoose.model('profile', profileSchema);
